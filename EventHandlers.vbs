@@ -13,7 +13,7 @@ MGLogPath = "D:\MailGuard\Log\log.txt"
 FailedDeliveryLogPath = "D:\MailGuard\Log\failed_Delivery.txt"
 Private Const setting_username = "Administrator"
 ' Set your hmailserver password here!
-Private Const setting_password = "PASSWORD"
+Private Const setting_password = "YOUR HMAIL SERVER PASSWORD"
 Private Const LogLevel = 1 '0- Nothing, 1-Only Errors, 2-Everything
 'End of global settings.
 
