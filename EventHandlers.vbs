@@ -12,7 +12,8 @@ Dim MGLogPath,FailedDeliveryLogPath
 MGLogPath = "D:\MailGuard\Log\log.txt"
 FailedDeliveryLogPath = "D:\MailGuard\Log\failed_Delivery.txt"
 Private Const setting_username = "Administrator"
-Private Const setting_password = "s41s3v4!"
+' Set your hmailserver password here!
+Private Const setting_password = "PASSWORD"
 Private Const LogLevel = 1 '0- Nothing, 1-Only Errors, 2-Everything
 'End of global settings.
 
@@ -34,7 +35,7 @@ if lcase(oClient.UserName) <> ""  THEN 'Run only for authenticated users sending
 	
 	Set objConnection = CreateObject("ADODB.Connection")
 
-	'Here is the connection. Create a SYSTEM DSN called MailGuard
+		'Here is the connection. Create a SYSTEM DSN called MailGuard and give access to hmail database
 	objConnection.Open "DSN=MailGuard"
 	
 	If Err <> 0 then
@@ -45,7 +46,7 @@ if lcase(oClient.UserName) <> ""  THEN 'Run only for authenticated users sending
 	End If
 	
 	Dim InputString,ResultString
-	Dim MailGuardID : MailGuardID = "MailGuard <mailguard@mmctbs.com>"
+			Dim MailGuardID : MailGuardID = "MailGuard <mailguard@YOURDOMAIN.com>"
 	
 	If LogLevel>1 THEN WriteLog MgLogPath, "MG Starting"
 
